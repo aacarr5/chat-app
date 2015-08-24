@@ -1,9 +1,7 @@
 <!doctype html>
-<html>
+<html lang="en">
+
   <head>
-    <link rel="stylesheet" href="js/application.css">
-    <script src="js/User.js"></script>
-    <script src="js/application.js"></script>
     
     <title>Socket.IO chat</title>
     
@@ -28,16 +26,16 @@
     </form>
 
     <script>
-      // var socket = io();
-      // $('form').submit(function(){
-      //   socket.emit('chat message',$("#m").val());
-      //   $("#m").val("");
-      //   return false  
-      // })
+      var socket = io();
+      $('form').submit(function(){
+        socket.emit('chat message',$("#m").val());
+        $("#m").val("");
+        return false  
+      })
 
-      // socket.on('chat message',function(msg){
-      //   $('#messages').append($("<li>").text(msg))
-      // })
+      socket.on('chat message',function(msg){
+        $('#messages').append($("<li>").text(msg))
+      })
     </script>
 
   </body>
